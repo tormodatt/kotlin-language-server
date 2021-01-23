@@ -9,6 +9,13 @@ allprojects {
     }
 }
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(11)
+        vendor = JvmVendorSpec.ADOPTOPENJDK
+    }
+}
+
 configure(subprojects.findAll { it.name != 'grammars' }) {
     apply plugin: 'kotlin'
     apply plugin: 'maven-publish'
